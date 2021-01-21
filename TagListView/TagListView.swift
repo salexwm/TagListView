@@ -340,7 +340,7 @@ open class TagListView: UIView {
         return CGSize(width: frame.width, height: height)
     }
     
-    private func createNewTagView(_ title: String) -> TagView {
+    private func createNewTagView(_ title: NSAttributedString) -> TagView {
         let tagView = TagView(title: title)
         
         tagView.textColor = textColor
@@ -374,15 +374,19 @@ open class TagListView: UIView {
     }
 
     @discardableResult
-    open func addTag(_ title: String) -> TagView {
+    open func addTag(_ title: NSAttributedString) -> TagView {
         defer { rearrangeViews() }
         return addTagView(createNewTagView(title))
     }
-    
-    @discardableResult
-    open func addTags(_ titles: [String]) -> [TagView] {
-        return addTagViews(titles.map(createNewTagView))
+    open func addTag(_ title: String) -> TagView {
+        defer { rearrangeViews() }
+        return addTagView(createNewTagView(NSAttributedString(string: title)))
     }
+    
+//    @discardableResult
+//    open func addTags(_ titles: [String]) -> [TagView] {
+//        return addTagViews(titles.map(createNewTagView))
+//    }
     
     @discardableResult
     open func addTagView(_ tagView: TagView) -> TagView {
@@ -403,10 +407,10 @@ open class TagListView: UIView {
         return tagViews
     }
 
-    @discardableResult
-    open func insertTag(_ title: String, at index: Int) -> TagView {
-        return insertTagView(createNewTagView(title), at: index)
-    }
+//    @discardableResult
+//    open func insertTag(_ title: String, at index: Int) -> TagView {
+//        return insertTagView(createNewTagView(title), at: index)
+//    }
     
 
     @discardableResult

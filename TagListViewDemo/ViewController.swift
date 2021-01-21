@@ -18,11 +18,11 @@ class ViewController: UIViewController, TagListViewDelegate {
         super.viewDidLoad()
         
         tagListView.delegate = self
-        tagListView.addTag("TagListView")
-        tagListView.addTag("TEAChart")
-        tagListView.addTag("To Be Removed")
-        tagListView.addTag("To Be Removed")
-        tagListView.addTag("Quark Shell")
+//        tagListView.addTag("TagListView")
+//        tagListView.addTag("TEAChart")
+//        tagListView.addTag("To Be Removed")
+//        tagListView.addTag("To Be Removed")
+//        tagListView.addTag("Quark Shell")
         tagListView.removeTag("To Be Removed")
         tagListView.addTag("On tap will be removed").onTap = { [weak self] tagView in
             self?.tagListView.removeTagView(tagView)
@@ -34,7 +34,7 @@ class ViewController: UIViewController, TagListViewDelegate {
             print("Don’t tap me!")
         }
 
-        tagListView.insertTag("This should be the third tag", at: 2)
+//        tagListView.insertTag("This should be the third tag", at: 2)
         
         biggerTagListView.delegate = self
         biggerTagListView.textFont = .systemFont(ofSize: 15)
@@ -50,7 +50,7 @@ class ViewController: UIViewController, TagListViewDelegate {
         biggestTagListView.delegate = self
         biggestTagListView.textFont = .systemFont(ofSize: 24)
         // it is also possible to add all tags in one go
-        biggestTagListView.addTags(["all", "your", "tag", "are", "belong", "to", "us"])
+//        biggestTagListView.addTags(["all", "your", "tag", "are", "belong", "to", "us"])
         biggestTagListView.alignment = .right
         
     }
